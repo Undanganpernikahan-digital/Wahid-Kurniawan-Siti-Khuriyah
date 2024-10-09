@@ -35,7 +35,7 @@ body {
   text-shadow: var(--shadow);
 }
 
-.hero h2 {
+.hero h1 {
   font-family: 'Sacramento', cursive;
   font-size: 6rem;
 }
