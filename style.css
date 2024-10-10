@@ -10,11 +10,6 @@ body {
   min-height: 4000px;
 }
 
-.hero {
-  position: relative;
-  min-height: 100vh;
-}
-
 .hero::before {
   content: '';
   position: absolute;
@@ -29,13 +24,18 @@ body {
   filter: grayscale();
 }
 
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+
 .hero h1,
 .hero h4,
 .hero p {
   text-shadow: var(--shadow);
 }
 
-.hero h2 {
+.hero h1 {
   font-family: 'Sacramento', cursive;
   font-size: 6rem;
 }
@@ -57,6 +57,23 @@ body {
 .hero a:hover {
   background-color: var(--pink);
   color: white;
+}
+
+.mynavbar .offcanvas {
+  height: 100vh;
+}
+
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+
+
+.mynavbar .nav-link {
+  text-transform: uppercase;
 }
 
 .home {
@@ -187,7 +204,136 @@ body {
   font-weight: 300;
 }
 
-.footer {
+.timeline {
+  list-style: none;
+  padding: 1.4rem 0;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ccc;
+  left: 50%;
+}
+
+.timeline li {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline li::before,
+.timeline li::after {
+  content: '';
+  display: table;
+}
+
+.timeline li::after {
+  clear: both;
+}
+
+.timeline li .timeline-image {
+  width: 160px;
+  height: 160px;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.timeline li .timeline-panel {
+  width: 40%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.timeline li .timeline-panel::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  top: 80px;
+  right: -15px;
+}
+
+.timeline li .timeline-panel::after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  top: 81px;
+  right: -13px;
+}
+
+.timeline li.timeline-inverted .timeline-panel {
+  float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel::before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline li.timeline-inverted .timeline-panel::after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -13px;
+  right: auto;
+}
+
+.gallery {
+  background-color: #f5f5f5;
+}
+
+.rsvp {
+  background-color: var(--bg);
+}
+
+.rsvp h2 {
+  font-size: 4.5rem;
+}
+
+.rsvp p {
+  color: white;
+}
+
+.rsvp form label {
+  color: white;
+}
+
+.rsvp button {
+  background-color: var(--pink);
+  color: white;
+  border: 1px solid var(--pink);
+}
+
+.rsvp button:hover {
+  background-color: white;
+  color: var(--pink);
+  border: 1px solid white;
+}
+
+footer {
   padding: 3rem;
   background-color: var(--pink);
   color: white;
@@ -251,8 +397,16 @@ footer li {
     font-size: 75%;
   }
 
+  .simply-countdown > .simply-section {
+    padding: 70px;
+  }
+
   .home .heart {
     display: none;
+  }
+
+  .timeline::before {
+    left: 60px;
   }
 
   .timeline li .timeline-image {
@@ -260,12 +414,36 @@ footer li {
     margin-left: 45px;
     top: 16px;
   }
+
+  .timeline li .timeline-panel {
+    width: calc((100% - 200px));
+    float: right;
+  }
+
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
+  }
 }
 
 /* tablet */
 @media (max-width: 768px) {
   html {
     font-size: 65%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 60px;
+    margin: 5px;
   }
 
   .mynavbar .nav-link {
@@ -287,6 +465,11 @@ footer li {
 @media (max-width: 576px) {
   html {
     font-size: 60%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 45px;
+    margin: 3px;
   }
 
   .timeline li .timeline-image {
