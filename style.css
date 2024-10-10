@@ -36,14 +36,16 @@ body {
 }
 
 .hero h1 {
-  font-family: 'erotique';
-  font-size: 4rem;
-  color: #0a0a0a;
+  font-family: 'Sacramento', cursive;
+  font-size: 6rem;
+}
+
+.hero h4 {
+  font-size: 1.6rem;
 }
 
 .hero p {
   font-size: 1.4rem;
-  color: #0a0a0a;
 }
 
 .hero a {
@@ -67,6 +69,8 @@ body {
   font-size: 3.2rem;
   font-weight: bold;
 }
+
+
 
 .mynavbar .nav-link {
   text-transform: uppercase;
@@ -382,12 +386,12 @@ footer li {
 /* Media Query */
 /* Extra large */
 @media (max-width: 1200px) {
-  .hero h1 {
-    font-size: 5rem; /* Ukuran font untuk perangkat besar */
+  .home .heart {
+    transform: translateX(-50%) translateY(45px);
   }
 }
 
-/* Laptop */
+/* laptop */
 @media (max-width: 992px) {
   html {
     font-size: 75%;
@@ -412,66 +416,77 @@ footer li {
   }
 
   .timeline li .timeline-panel {
-    width: calc((100% - 200px) / 2);
+    width: calc((100% - 200px));
+    float: right;
   }
 
-  .timeline li.timeline-inverted .timeline-panel {
-    width: calc((100% - 200px) / 2);
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -13px;
+    right: auto;
   }
 }
 
-/* Tablet */
+/* tablet */
 @media (max-width: 768px) {
   html {
-    font-size: 62.5%;
+    font-size: 65%;
   }
 
-  .hero h1 {
-    font-size: 3rem; /* Ukuran font untuk tablet */
+  .simply-countdown > .simply-section {
+    padding: 60px;
+    margin: 5px;
   }
 
-  .home h2 {
-    font-size: 4rem; /* Ukuran font untuk heading di home */
+  .mynavbar .nav-link {
+    font-size: 2rem;
+    text-align: center;
   }
 
-  .home h3 {
-    font-size: 1.8rem; /* Ukuran font untuk heading h3 di home */
-  }
-
-  .timeline li .timeline-panel {
-    width: calc(100% - 50px);
-  }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-  html {
-    font-size: 55%; /* Ukuran font lebih kecil untuk ponsel */
-  }
-
-  .hero h1 {
-    font-size: 2.5rem; /* Ukuran font untuk ponsel */
-  }
-
-  .home h2 {
-    font-size: 3.5rem; /* Ukuran font untuk heading di home */
-  }
-
-  .home h3 {
-    font-size: 1.5rem; /* Ukuran font untuk heading h3 di home */
-  }
-
-  .info .description {
-    font-size: 0.9rem; /* Ukuran font untuk deskripsi */
-  }
-
-  .timeline li .timeline-panel {
-    width: 90%; /* Panel timeline lebar di ponsel */
-    margin: 0 auto; /* Tengah kan panel */
+  .sticky-top {
+    overflow: hidden;
   }
 
   .timeline li .timeline-image {
-    width: 120px; /* Ukuran gambar timeline */
-    height: 120px;
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 576px) {
+  html {
+    font-size: 60%;
+  }
+
+  .simply-countdown > .simply-section {
+    padding: 45px;
+    margin: 3px;
+  }
+
+  .timeline li .timeline-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .timeline li .timeline-panel {
+    width: 65%;
+    transform: translateX(-20px);
+  }
+
+  .timeline li .timeline-panel::before {
+    top: 30px;
+  }
+
+  .timeline li .timeline-panel::after {
+    top: 31px;
   }
 }
